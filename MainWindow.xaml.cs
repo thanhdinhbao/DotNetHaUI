@@ -19,7 +19,6 @@ namespace ThuongXuyen2
 
         private void btnNhap_Click(object sender, RoutedEventArgs e)
         {
-            // Kiểm tra các điều kiện hợp lệ
             if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
             {
                 MessageBox.Show("Vui lòng nhập mã nhân viên.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -63,7 +62,6 @@ namespace ThuongXuyen2
                 return;
             }
 
-            // Nếu tất cả dữ liệu hợp lệ
             MessageBox.Show("Dữ liệu hợp lệ. Thông tin đã được nhập thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
 
             NhanVien nv = new NhanVien
@@ -82,6 +80,11 @@ namespace ThuongXuyen2
             dgvInfo.Items.Refresh();
         }
 
+        private void btnOpenWindow_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new Window();
+            window.Activate();
+        }
     }
 }
 

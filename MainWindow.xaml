@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThuongXuyen2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Bài kiểm tra thường xuyên 2" Height="700" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="Beige">
         <!-- Tiêu đề -->
         <TextBlock Text="Quản lý thông tin nhân viên" FontSize="24" Foreground="Blue" 
@@ -40,13 +40,13 @@
                     <DatePicker x:Name="dpBirthday" SelectedDate="2021-12-21" Width="200" Grid.Column="1" Grid.Row="2" Margin="0,10,0,0"/>
 
                     <TextBlock Text="Giới tính:" Grid.Column="0" VerticalAlignment="Center" Grid.Row="3" Margin="0,10,0,0"/>
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="214,11,-214,31" Grid.RowSpan="2">
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="214,10,214,0">
                         <RadioButton x:Name="radMale" Content="Nam" Margin="0,0,10,0" IsChecked="True"/>
                         <RadioButton x:Name="radFemale" Content="Nữ"/>
                     </StackPanel>
 
                     <TextBlock Text="Phòng ban:" Grid.Column="0" VerticalAlignment="Center" Grid.Row="4" Margin="0,10,0,0"/>
-                    <ComboBox x:Name="cbPhongBan" Width="200" Grid.Column="1" Grid.Row="4" Margin="0,10,0,0">
+                    <ComboBox x:Name="cbPhongBan" Width="200" Grid.Column="1" Grid.Row="4" Margin="0,10,0,0" SelectedIndex="0">
                         <ComboBoxItem Content="Tổ chức"/>
                         <ComboBoxItem Content="Kế hoạch"/>
                         <ComboBoxItem Content="Vật tư"/>
@@ -84,11 +84,11 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="btnOpenWindow" Content="Window 2" Width="80" Height="30" Background="Gold" Foreground="Green" FontWeight="Bold">
+            <Button x:Name="btnOpenWindow" Content="Window 2" Width="80" Height="30" Background="Gold" Foreground="Green" FontWeight="Bold" Click="btnOpenWindow_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Ellipse Fill="Gold" Stroke="Green" StrokeThickness="2"/>
+                            <Ellipse Fill="Gold"/>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </ControlTemplate>
