@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows;
 
 namespace ThuongXuyen2
@@ -82,8 +83,20 @@ namespace ThuongXuyen2
 
         private void btnOpenWindow_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new Window();
-            window.Activate();
+            if(danhSachNhanVien.Count <= 0)
+            {
+                MessageBox.Show("Chưa có nhân viên nào!");
+            }
+            else
+            {
+                int maxAge = danhSachNhanVien.Max(nv => nv.Tuoi);
+                var nhanVienMaxTuoi = danhSachNhanVien.Where(nv => nv.Tuoi == maxAge).ToList();
+
+                Window1 window = new Window1();
+                window.dgvInfo.ItemsSource = nhanVienMaxTuoi;
+                window.Show();
+            }
+            
         }
     }
 }
