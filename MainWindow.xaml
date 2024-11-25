@@ -37,14 +37,13 @@
                     <TextBox x:Name="txtHoTen" Width="200" Grid.Column="1" Grid.Row="1" Margin="0,10,0,0"/>
 
                     <TextBlock Text="Ngày sinh:" Grid.Column="0" VerticalAlignment="Center" Grid.Row="2" Margin="0,10,0,0"/>
-                    <DatePicker x:Name="dpBirthday" SelectedDate="2021-12-21" Width="200" Grid.Column="1" Grid.Row="2" Margin="0,10,0,0"/>
+                    <DatePicker x:Name="dpBirthday" Width="200" Grid.Column="1" Grid.Row="2" Margin="0,10,0,0"/>
 
                     <TextBlock Text="Giới tính:" Grid.Column="0" VerticalAlignment="Center" Grid.Row="3" Margin="0,10,0,0"/>
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="214,10,214,0">
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="218,10,214,32" Grid.RowSpan="2">
                         <RadioButton x:Name="radMale" Content="Nam" Margin="0,0,10,0" IsChecked="True"/>
                         <RadioButton x:Name="radFemale" Content="Nữ"/>
                     </StackPanel>
-
                     <TextBlock Text="Phòng ban:" Grid.Column="0" VerticalAlignment="Center" Grid.Row="4" Margin="0,10,0,0"/>
                     <ComboBox x:Name="cbPhongBan" Width="200" Grid.Column="1" Grid.Row="4" Margin="0,10,0,0" SelectedIndex="0">
                         <ComboBoxItem Content="Tổ chức"/>
@@ -73,8 +72,11 @@
 
             </StackPanel>
         </Border>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="352,504,0,61" Width="174">
-            <Button x:Name="btnNhap" Content="Nhập" Width="80" Height="30" Background="Gold" Foreground="Green" FontWeight="Bold" Margin="0,0,10,0" Click="btnNhap_Click">
+
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,522,0,43" Width="174">
+            <Button x:Name="btnNhap" Content="Nhập" Style="{StaticResource styleButton}" Margin="0,0,10,0" Click="btnNhap_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -84,7 +86,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="btnOpenWindow" Content="Window 2" Width="80" Height="30" Background="Gold" Foreground="Green" FontWeight="Bold" Click="btnOpenWindow_Click">
+            <Button x:Name="btnOpenWindow" Content="Window 2" Style="{StaticResource styleButton}" Click="btnOpenWindow_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>

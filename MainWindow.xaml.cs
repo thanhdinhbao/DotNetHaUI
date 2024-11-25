@@ -20,7 +20,7 @@ namespace ThuongXuyen2
 
         private void btnNhap_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
+            if (txtMaNhanVien.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mã nhân viên.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -98,6 +98,7 @@ namespace ThuongXuyen2
             }
             
         }
+
     }
 }
 

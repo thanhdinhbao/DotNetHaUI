@@ -13,7 +13,7 @@ namespace ThuongXuyen2
         public DateTime NgaySinh { get; set; }
         public string GioiTinh { get; set; }
         public string PhongBan { get; set; }
-        public decimal HeSoLuong { get; set; }
+        public double HeSoLuong { get; set; }
         public int Tuoi { get; set; }
     }
 
