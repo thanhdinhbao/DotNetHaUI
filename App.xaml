@@ -11,5 +11,22 @@
             <Setter Property="Foreground" Value="Green"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
         </Style>
+
+        <Style x:Key="styleDatagridHeader" TargetType="DataGridColumnHeader">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+        
+        <Style x:Key="styleDatagridCell" TargetType="DataGridCell">
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+        </Style>
+
+        <ControlTemplate x:Key="templateButton" TargetType="Button">
+            <Grid>
+                <Ellipse Fill="Gold"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+        </ControlTemplate>
     </Application.Resources>
 </Application>

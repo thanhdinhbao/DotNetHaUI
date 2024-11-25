@@ -20,7 +20,7 @@ namespace ThuongXuyen2
 
         private void btnNhap_Click(object sender, RoutedEventArgs e)
         {
-            if (txtMaNhanVien.Text == "")
+            if (string.IsNullOrWhiteSpace(txtMaNhanVien.Text))
             {
                 MessageBox.Show("Vui lòng nhập mã nhân viên.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -32,12 +32,6 @@ namespace ThuongXuyen2
                 return;
             }
 
-            if (!dpBirthday.SelectedDate.HasValue)
-            {
-                MessageBox.Show("Vui lòng chọn ngày sinh.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
             int age = DateTime.Now.Year - dpBirthday.SelectedDate.Value.Year;
             if (age < 18)
             {
@@ -45,19 +39,7 @@ namespace ThuongXuyen2
                 return;
             }
 
-            if (radMale.IsChecked == false && radFemale.IsChecked == false)
-            {
-                MessageBox.Show("Vui lòng chọn giới tính.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (cbPhongBan.SelectedItem == null)
-            {
-                MessageBox.Show("Vui lòng chọn phòng ban.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtHeSoLuong.Text) || !decimal.TryParse(txtHeSoLuong.Text, out decimal heSoLuong) || heSoLuong <= 0)
+            if (string.IsNullOrWhiteSpace(txtHeSoLuong.Text) || !double.TryParse(txtHeSoLuong.Text, out double heSoLuong) || heSoLuong <= 0)
             {
                 MessageBox.Show("Hệ số lương phải là một số thực lớn hơn 0.", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -78,7 +60,7 @@ namespace ThuongXuyen2
             danhSachNhanVien.Add(nv);
             dgvInfo.ItemsSource = null;
             dgvInfo.ItemsSource = danhSachNhanVien;
-            dgvInfo.Items.Refresh();
+            //dgvInfo.Items.Refresh();
         }
 
         private void btnOpenWindow_Click(object sender, RoutedEventArgs e)
@@ -99,6 +81,10 @@ namespace ThuongXuyen2
             
         }
 
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            dpBirthday.SelectedDate = DateTime.Now;
+        }
     }
 }
 

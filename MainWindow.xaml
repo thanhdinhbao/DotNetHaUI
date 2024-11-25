@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThuongXuyen2"
         mc:Ignorable="d"
-        Title="Bài kiểm tra thường xuyên 2" Height="700" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Bài kiểm tra thường xuyên 2" Height="700" Width="800" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Grid Background="Beige">
         <!-- Tiêu đề -->
         <TextBlock Text="Quản lý thông tin nhân viên" FontSize="24" Foreground="Blue" 
@@ -56,46 +56,24 @@
                 </Grid>
 
                 <!-- DataGrid hiển thị thông tin nhân viên -->
-                <DataGrid x:Name="dgvInfo" Margin="5" AutoGenerateColumns="False" Height="208">
+                <DataGrid x:Name="dgvInfo" Margin="5" AutoGenerateColumns="False" Height="208" ColumnHeaderStyle="{StaticResource styleDatagridHeader}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Mã nhân viên" Binding="{Binding MaNhanVien}" />
                         <DataGridTextColumn Header="Họ tên" Binding="{Binding HoTen}" />
-                        <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh}" />
+                        <DataGridTextColumn Header="Ngày sinh" Binding="{Binding NgaySinh, StringFormat=dd-MM-yyyy}" />
                         <DataGridTextColumn Header="Giới tính" Binding="{Binding GioiTinh}" />
                         <DataGridTextColumn Header="Phòng ban" Binding="{Binding PhongBan}" />
                         <DataGridTextColumn Header="Hệ số lương" Binding="{Binding HeSoLuong}" />
-                        <DataGridTextColumn Header="Tuổi" Binding="{Binding Tuoi}" />
+                        <DataGridTextColumn Header="Tuổi" Binding="{Binding Tuoi}" Width="*" CellStyle="{StaticResource styleDatagridCell}" />
                     </DataGrid.Columns>
                 </DataGrid>
-
-                <!-- Các nút chức năng -->
 
             </StackPanel>
         </Border>
 
-
-
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,522,0,43" Width="174">
-            <Button x:Name="btnNhap" Content="Nhập" Style="{StaticResource styleButton}" Margin="0,0,10,0" Click="btnNhap_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Ellipse Fill="Gold"/>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button x:Name="btnOpenWindow" Content="Window 2" Style="{StaticResource styleButton}" Click="btnOpenWindow_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Ellipse Fill="Gold"/>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+            <Button x:Name="btnNhap" Content="Nhập" Style="{StaticResource styleButton}" Template="{StaticResource templateButton}" Margin="0,0,10,0" Click="btnNhap_Click"></Button>
+                <Button x:Name="btnOpenWindow" Content="Window 2" Style="{StaticResource styleButton}" Template="{StaticResource templateButton}" Click="btnOpenWindow_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>
