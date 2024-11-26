@@ -40,7 +40,7 @@
                     <DatePicker x:Name="dpBirthday" Width="200" Grid.Column="1" Grid.Row="2" Margin="0,10,0,0"/>
 
                     <TextBlock Text="Giới tính:" Grid.Column="0" VerticalAlignment="Center" Grid.Row="3" Margin="0,10,0,0"/>
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="218,10,214,32" Grid.RowSpan="2">
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Margin="218,0,218,0" VerticalAlignment="Center" Width="200">
                         <RadioButton x:Name="radMale" Content="Nam" Margin="0,0,10,0" IsChecked="True"/>
                         <RadioButton x:Name="radFemale" Content="Nữ"/>
                     </StackPanel>
@@ -71,9 +71,9 @@
             </StackPanel>
         </Border>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,522,0,43" Width="174">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,553,0,49" Width="174">
             <Button x:Name="btnNhap" Content="Nhập" Style="{StaticResource styleButton}" Template="{StaticResource templateButton}" Margin="0,0,10,0" Click="btnNhap_Click"></Button>
-                <Button x:Name="btnOpenWindow" Content="Window 2" Style="{StaticResource styleButton}" Template="{StaticResource templateButton}" Click="btnOpenWindow_Click"></Button>
+            <Button x:Name="btnOpenWindow" Content="Window 2" Style="{StaticResource styleButton}" Template="{StaticResource templateButton}" Click="btnOpenWindow_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>
